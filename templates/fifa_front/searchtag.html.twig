@@ -1,0 +1,44 @@
+{% block body %}
+
+    {{ render(controller('App\\Controller\\SearchController::searchBar')) }}
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #2C3E50;">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <div id="fb-root">
+                <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+            </div>
+
+            <!-- Your share button code -->
+            <div class="fb-share-button"
+                 data-href="https://www.sf.m3104.koulibaly.com/equipe"
+                 data-layout="button_count" style="margin-bottom: 1%">
+            </div>
+            <!-- Section: CTA -->
+            <section class="">
+                <p class="d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-outline-light btn-rounded">
+                        <a href="/contact">Contactez-nous</a>
+                    </button>
+                </p>
+            </section>
+            <!-- Section: CTA -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-white" href="#">sf.m3104.koulibaly.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+{% endblock %}

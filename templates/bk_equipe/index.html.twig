@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des équipes{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des équipes</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Lien de l'image</th>
+                    <th>Création de l'équipe</th>
+                    <th>Histoire de l'équipe</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for b_k_equipe in b_k_equipes %}
+                <tr>
+                    <td>{{ b_k_equipe.nom }}</td>
+                    <td>{{ b_k_equipe.images | slice(0,20) }}</td>
+                    <td>{{ b_k_equipe.dateEquipe ? b_k_equipe.dateEquipe|date('Y-m-d') : '' }}</td>
+                    <td>{{ b_k_equipe.text | slice(0,50)}} ...</td>
+                    <td>
+                    {{ b_k_equipe.type }}
+                    <td>
+                        <a href="{{ path('b_k_equipe_show', {'id': b_k_equipe.id}) }}">afficher</a>
+                        <a href="{{ path('b_k_equipe_edit', {'id': b_k_equipe.id}) }}">modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('b_k_equipe_new') }}">Ajouter une équipe</a>
+    </div>
+{% endblock %}

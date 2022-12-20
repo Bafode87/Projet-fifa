@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Video{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Edit Video</h1>
+
+        {{ include('bk_video/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+        <a href="{{ path('b_k_video_index') }}"class="btn btn-primary">Retourner a la liste des vidéos</a>
+
+        {{ include('bk_video/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

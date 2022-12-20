@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultat de la recherche{% endblock %}
+
+{% block body %}
+    {% if app.request.method == 'POST' %}
+        <div>
+            {% if tags | length == 0 %}
+                <h4>Aucun résulat pour votre recherche.</h4>
+            {% else %}
+                <h3 class="mt-3">Vos résulats de recherche :</h3>
+                {% for tags in tags %}
+                    {% for video in tags.videos %}
+                        <article style="display: flex; align-items: center; flex-direction: column">
+                            <h2>{{ video.titre}}</h2>
+                            <div class="metadata espaceCustom">Ecrit le {{ video.postedAt | date('d/m/y') }} à {{ video.postedAt | date('H:i') }} dans la catégorie {{ video.type.nom }}</div>
+                            <div class="content" style="display: flex; align-items: center; flex-direction: column">
+                                <iframe class="espaceCustom" width="560" height="315" src="{{ video.lien }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div style="display: flex; flex-direction: row">
+                                    <p>Tags de la vidéo :&nbsp</p>
+                                    {% for tag in video.tags %}
+                                        <p style="color: {{ tag.couleur }}">#{{ tag.nom }}&nbsp</p>
+                                    {% endfor %}
+                                </div>
+                                <p>{{ video.description | u.truncate(100,'[...]',false) | raw }}</p>
+                                <a href="{{ path('visualiserVideo',{'id': video.id})}}" class="btn btn-primary" style="margin-bottom: 5%" >Lire la suite</a>
+                            </div>
+                        </article>
+                        <hr>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

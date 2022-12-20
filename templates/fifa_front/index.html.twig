@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Page d'accueil {% endblock %}
+
+{% block body %}
+<div id="conteneurPrincipal">
+
+    <header>
+        <div id="partieHaute">
+            <img src="{{ asset('image/fifa.jpg') | imagine_filter('imgprincipal')}}" width="100%">
+        </div>
+    </header>
+
+
+    <div id="centre">
+        <section id="Présention" class="espace2 container">
+            <h4>FIFA 22</h4>
+            <p>
+                FIFA 22 est un jeu vidéo de simulation de football publié par Electronic Arts. Il s'agit du 29e volet de cette série FIFA. Il est sorti sur Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Google Stadia, Xbox One et Xbox Series le 1er octobre 2021. Sur PlayStation 5, Xbox Series et Google Stadia, le jeu utilise la technologie Hyper Motion Technology qui permet une expérience hyperréaliste du jeu4. Kylian Mbappé figure une 2e fois consécutive sur la jaquette de FIFA 22. Pour les commentateurs français, Pierre Ménès n'a pas été conservé et seul Hervé Mathoux commente les matchs.
+            </p>
+        </section>
+        <section id="Carriere" class="espace2 container">
+            <h4>MODE CARRIERE</h4>
+            <p>
+                Pour la toute première fois du mode Carrière, il est possible de créer son propre club avec son logo, son nom, ses couleurs, son stade, personnalisable par le joueur et bien évidemment de le gérer.
+
+                Le mode Carrière joueur évolue également avec plus de moyens pour personnaliser leur expérience. Il apporte une refonte attendue depuis longtemps de l'expérience de jeu, avec un contrôle total sur le développement et la progression de carrière de votre pro.
+            </p>
+        </section>
+        <section id="Fut" class="espace2 container">
+            <h4>MODE FUT</h4>
+            <p>
+                Des nouvelles cartes sont proposées, nommées Carte FUT Héros, avec notamment Mario Gómez, Ole Gunnar Solskjær, Lars Ricken, Tim Cahill, Diego Milito, Jorge Campos, Fernando Morientes, Sami al-Jaber, Robbie Keane, Abedi Pelé, Clint Dempsey ou encoreDavid Ginola.
+
+                De nouvelles icônes apparaissent aussi dans cet opus.
+            </p>
+        </section>
+
+    </div>
+
+</div>
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #2C3E50;">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <div id="fb-root">
+                <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+            </div>
+
+            <!-- Your share button code -->
+            <div class="fb-share-button"
+                 data-href="https://www.sf.m3104.koulibaly.com/equipe"
+                 data-layout="button_count" style="margin-bottom: 1%">
+            </div>
+            <!-- Section: CTA -->
+            <section class="">
+                <p class="d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-outline-light btn-rounded">
+                        <a href="/contact">Contactez-nous</a>
+                    </button>
+                </p>
+            </section>
+            <!-- Section: CTA -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-white" href="#">sf.m3104.koulibaly.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+{% endblock %}
+

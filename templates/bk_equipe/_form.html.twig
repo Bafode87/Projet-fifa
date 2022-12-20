@@ -1,0 +1,7 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div >
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary espace">{{ button_label|default('Ajouter') }}</button>
+    {{ form_end(form) }}
+</div>

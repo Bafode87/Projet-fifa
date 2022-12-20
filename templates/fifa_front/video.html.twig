@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vidéos{% endblock %}
+
+{% block body %}
+<div class="container">
+    <section  class="espace2">
+        {% for video in videos  %}
+        <article id="Equipe" class="espace espace2">
+            <h2>{{video.Titre}}</h2>
+            <h6>Ajouter le {{ video.postedat | date('j / m / Y') }}</h6>
+            <h6>Auteur : {{ video.author }}</h6>
+            <h6>Catégorie : {{ video.type.nom }}</h6>
+
+               <div class="">
+                    {% for tag in video.tags %}
+                        <a href="/search"><p class=" btn display : d-inline-block " style="background-color: {{ tag.couleur }} ; width: 20% ; margin-right: 1%" >#{{ tag.nom }}</p></a>
+                    {% endfor %}
+               </div>
+            <div class="content">
+                <iframe  width="25%" height="10%" src="{{ video.lien }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h4>Description</h4>
+                <p>{{ video.description|u.truncate(100, '[...]', false) }}</p>
+                <a href="{{ path('visualiserVideo',{'id': video.id})}}" class="btn btn-primary" style="margin-bottom: 5%" >Lire la suite</a>
+
+
+            </div>
+
+        </article>
+        {% endfor %}
+
+    </section>
+</div>
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #2C3E50;">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <div id="fb-root">
+                <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+            </div>
+
+            <!-- Your share button code -->
+            <div class="fb-share-button"
+                 data-href="https://www.sf.m3104.koulibaly.com/equipe"
+                 data-layout="button_count" style="margin-bottom: 1%">
+            </div>
+            <!-- Section: CTA -->
+            <section class="">
+                <p class="d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-outline-light btn-rounded">
+                        <a href="/contact">Contactez-nous</a>
+                    </button>
+                </p>
+            </section>
+            <!-- Section: CTA -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-white" href="#">sf.m3104.koulibaly.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+{% endblock %}

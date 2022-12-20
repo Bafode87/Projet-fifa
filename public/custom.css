@@ -1,0 +1,81 @@
+.container{
+    margin : 5%;
+
+}
+
+#centreLogin>input{
+    margin-bottom: 2%;
+}
+
+#centreLogin>a{
+    display : block;
+    margin-bottom: 2%;
+}
+
+#divRequestForm{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#h1RequestForm{
+    margin-bottom: 2%;
+}
+
+#h1ResetForm{
+    margin-bottom: 2%;
+}
+
+#divResetForm{
+    margin-top: 2%;
+}
+#h1RegistrationForm{
+    margin-bottom: 2%;
+}
+
+.espace{
+    margin : 1% 1% 1% 0%;
+}
+
+
+.espace1{
+    margin : 2%;
+}
+
+.espace2{
+    padding : 1%;
+}
+
+ #centre>p{
+    text-align : justify;
+}
+
+#Présention, #Carriere, #Fut, #Equipe, #Video{
+    background-color: darkgreen;
+    color: white;
+    text-align: justify;
+    border: solid 2px #7676e0;
+}
+
+#partieHaute>h1{
+    text-align: center;
+}
+
+#Présention>h4, #Carriere>h4, #Fut>h4{
+    font-weight: bold;
+    text-align: center;
+}
+
+.content>p{
+    text-align: justify;
+}
+
+.content>img{
+    float: left;
+    margin:1%;
+}
+
+#Equipe{
+    margin-bottom: 1%;
+}
+
+

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Éditer l'utilisateur {{ user.id }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Éditer l'utilisateur {{ user.id }}</h1>
+
+        {{ include('bk_user/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+
+
+        {{ include('bk_user/_delete_form.html.twig') }}
+        <a href="{{ path('b_k_user_index') }}" class="btn btn-primary">Retourner a la liste des utilisateurs</a>
+    </div>
+{% endblock %}

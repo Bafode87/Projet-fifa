@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Video{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Create new Video</h1>
+
+        {{ include('bk_video/_form.html.twig') }}
+
+        <a href="{{ path('b_k_video_index') }}"class="btn btn-primary">Retour à la liste</a>
+    </div>
+{% endblock %}

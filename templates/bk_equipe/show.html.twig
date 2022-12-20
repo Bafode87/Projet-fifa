@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipe {{ b_k_equipe.nom }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Equipe {{ b_k_equipe.nom }}</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ b_k_equipe.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ b_k_equipe.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Lien de l'image</th>
+                    <td>{{ b_k_equipe.images }}</td>
+                </tr>
+                <tr>
+                    <th>Création de l'équipe</th>
+                    <td>{{ b_k_equipe.dateEquipe ? b_k_equipe.dateEquipe|date('Y-m-d') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Histoire de l'équipe</th>
+                    <td style="text-align: justify">{{ b_k_equipe.text }}</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td style="text-align: justify">{{ b_k_equipe.type }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('b_k_equipe_index') }} "class ="btn btn-primary">Retour à liste des équipes</a>
+
+        <a href="{{ path('b_k_equipe_edit', {'id': b_k_equipe.id}) }}" class ="btn btn-primary">Modifier</a>
+
+        {{ include('bk_equipe/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

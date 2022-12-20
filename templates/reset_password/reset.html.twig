@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% form_theme resetForm 'bootstrap_4_layout.html.twig' %}
+{% block title %}Changement du mot de passe{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 id="h1ResetForm">Réinstialiser votre mot de passe</h1>
+
+        {{ form_start(resetForm) }}
+            {{ form_row(resetForm.plainPassword) }}
+            <div id="divResetForm">
+                <button class="btn btn-primary">Changer mot de passe</button>
+            </div>
+        {{ form_end(resetForm) }}
+    </div>
+{% endblock %}
